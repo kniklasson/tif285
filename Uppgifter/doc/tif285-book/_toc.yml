@@ -1,0 +1,73 @@
+format: jb-book
+root: content/Preface/preface-tif285
+parts:
+- caption: "Introduction"
+  numbered: 2
+  chapters:
+  - file: content/Intro/Intro.md
+  - file: content/Intro/exercise_Intro_01_Jupyter_Python.ipynb
+  - file: content/Intro/exercise_Intro_02_Jupyter_Python.ipynb
+  - file: content/Intro/exercise_Intro_03_Numpy.ipynb
+  - file: content/Intro/demo-Intro.ipynb
+  - file: content/Intro/Statistics.md
+- caption: "Scientific modeling"
+  numbered: true
+  chapters:
+  - file: content/ModelingOptimization/OverviewModeling.md
+  - file: content/ModelingOptimization/LinearModels.md
+  - file: content/ModelingOptimization/MathematicalOptimization.md
+- caption: "Stochastic processes and Markov Chains"
+  numbered: 2
+  chapters:
+  - file: content/StochasticProcesses/StochasticProcesses.md
+  - file: content/StochasticProcesses/MarkovChains.md
+  - file: content/StochasticProcesses/MCMC.md
+  - file: content/StochasticProcesses/demo-MCMC.ipynb
+  - file: content/BayesianStatistics/ComputationalBayes/AdvancedMCMC.md
+- caption: "Bayesian methods for scientific modeling"
+  numbered: 2
+  chapters:
+  - file: content/BayesianStatistics/BayesianBasics/BayesTheorem.md
+  - file: content/BayesianStatistics/BayesianBasics/demo-BayesianBasics.ipynb
+  - file: content/BayesianStatistics/BayesianBasics/exercise_sum_product_rule.ipynb
+  - file: content/BayesianStatistics/ModelsAndData/DataModelsPredictions.md
+  - file: content/BayesianStatistics/ErrorPropagation/BayesianAdvantages.md
+  - file: content/BayesianStatistics/BayesianLinearRegression/BayesianLinearRegression.md
+  - file: content/BayesianStatistics/BayesianWorkflow/BayesianWorkflow.md
+- caption: "Advanced Bayesian methods"
+  numbered: 2
+  chapters:
+  - file: content/BayesianStatistics/MaxEnt/IgnorancePDF.md
+  - file: content/BayesianStatistics/MaxEnt/MaxEnt.md
+  - file: content/BayesianStatistics/MaxEnt/demo-MaxEnt.ipynb
+  - file: content/BayesianStatistics/BayesianLinearRegression/BayesianLinearRegression_ConjugatePrior.md
+  - file: content/BayesianStatistics/ModelSelection/ModelSelection.md
+- caption: "Machine learning"
+  numbered: true
+  chapters:
+  - file: content/MachineLearning/MachineLearning.md
+  - file: content/MachineLearning/MachineLearningExamples.md
+  - file: content/MachineLearning/ModelValidation.md
+  - file: content/ModelingOptimization/demo-ModelValidation.ipynb
+  - file: content/ModelingOptimization/exercise_LinearRegression.ipynb
+  - file: content/MachineLearning/LogReg/LogReg.md
+  - file: content/MachineLearning/NeuralNet.md
+  - file: content/MachineLearning/NeuralNet/demo-NeuralNet.ipynb
+  - file: content/MachineLearning/NeuralNet/exercises_LogReg_NeuralNet.ipynb
+  #- file: content/MachineLearning/DataBiasFairness.md
+  - file: content/MachineLearning/NeuralNet/NeuralNetBackProp.md
+  - file: content/MachineLearning/CNN/cnn.md
+  - file: content/MachineLearning/CNN/demo-cnn.ipynb
+- caption: "Probabilistic methods for machine learning"
+  numbered: 2
+  chapters:
+  - file: content/MachineLearning/GP/GaussianProcesses.md
+  - file: content/MachineLearning/GP/demo-GaussianProcesses.ipynb
+  #- file: content/MachineLearning/GP/exercise_GP_GPy.ipynb
+  - file: content/MachineLearning/BNN/bnn.md
+  #- file: content/MachineLearning/BNN/demo-bnn.ipynb
+  - file: content/MachineLearning/BNN/exercises_BNN.ipynb
+- caption: Backmatter
+  numbered: 2
+  chapters:
+  - file: content/Backmatter/bibliography.md

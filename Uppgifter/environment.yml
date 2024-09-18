@@ -1,0 +1,20 @@
+name: tif285-env
+channels:
+- conda-forge
+dependencies:
+- python>=3.8
+- numpy
+- scipy
+- matplotlib
+- pandas
+- seaborn
+- jupyter
+- ipywidgets
+- nbdime
+- emcee
+- corner
+- scikit-learn
+- scikit-image
+- pip
+- pip:
+  - tensorflow

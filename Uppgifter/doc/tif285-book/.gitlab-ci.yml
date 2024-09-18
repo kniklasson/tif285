@@ -1,0 +1,50 @@
+image: $CI_REGISTRY/$CI_PROJECT_PATH/ci
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  PYDEVD_DISABLE_FILE_VALIDATION: 1
+
+build_docker:
+  stage: build
+  tags:
+    - linux
+    - docker
+  image: docker
+  services:
+    - docker:dind
+  script:
+    - BASE_PATH="$CI_REGISTRY/$CI_PROJECT_PATH"
+    - IMAGE_NAME=ci
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build --pull -t "$BASE_PATH/$IMAGE_NAME" .
+    - docker push "$BASE_PATH/$IMAGE_NAME"
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      changes:
+      - Dockerfile
+      when: manual
+      allow_failure: true
+
+.pages:
+  stage: deploy
+  script:
+    - jupyter-book build -n --keep-going ./
+    - mkdir public
+    - mv ./_build/html/* public/
+    - ls -l public/
+
+pages:
+  extends: .pages
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+
+branch:pages:
+  extends: .pages
+  artifacts:
+    paths:
+      - public
+  except:
+    - master
